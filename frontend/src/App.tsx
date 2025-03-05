@@ -11,13 +11,13 @@ function Team({school, name, city, state}: {school: string; name: string; city: 
   return(
     <>
       {/* Space for aesthetic */}
-      <h3>-------------</h3> 
+      <h2>-------------</h2> 
 
       {/* School and mascot name */}
-      <h3>{school}: {name}</h3>
+      <h2>{school}: {name}</h2>
       
       {/* Location */}
-      <h4>{city}, {state}</h4>
+      <h3>{city}, {state}</h3>
     </>
   )
 }
@@ -28,7 +28,7 @@ function TeamList() {
   return (
     <>
       {/* Heading */}
-      <h2>NCAA Basketball Teams</h2>
+      <h1>NCAA Basketball Teams</h1>
 
       {/* Display of all team cards */}
       {
@@ -46,11 +46,12 @@ function Intro() {
     <>
       {/* Title */}
       <h1>Welcome to Mission #9!</h1>
+      <h3>By Trevor Davis</h3>
       
       {/* Introduction to the website */}
-      <h3>
+      <h2>
         With March Madness upon us, here is a list of all the colleges in NCAA Basketball for your reference!
-      </h3>
+      </h2>
     </>
   );
 }
@@ -63,6 +64,8 @@ function App() {
       {/* Include the intro text */}
       <Intro />
 
+      <br />
+      <br />
       {/* Include the team list */}
       <TeamList />
     </>
