@@ -50,10 +50,19 @@ function Intro() {
       
       {/* Introduction to the website */}
       <h2>
-        With March Madness upon us, here is a list of all the colleges in NCAA Basketball for your reference!
+        With March Madness upon us, here is a list of information for all the college basketball teams in the NCAA!
       </h2>
     </>
   );
+}
+
+function Spacing(){
+  return(
+    <>
+      <br />
+      <br />
+    </>
+  )
 }
 
 function App() {
@@ -64,8 +73,9 @@ function App() {
       {/* Include the intro text */}
       <Intro />
 
-      <br />
-      <br />
+      {/* Aesthetic Spacing */}
+      <Spacing />
+
       {/* Include the team list */}
       <TeamList />
     </>
