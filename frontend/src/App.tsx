@@ -1,39 +1,56 @@
-import './App.css'
+import './App.css';
 
-const teamsData = [
-  {
-    school: "BYU",
-    mascot: "Cougars",
-    city: "Provo",
-    state: "Utah"
-  },
-  {
-    school: "UofU",
-    mascot: "Red Hawk",
-    city: "Salt Lake City",
-    state: "Utah"
-  },
-];
+import jsonData from './CollegeBasketballTeams.json';
 
-function Team({school, mascot, city, state}: {school: string; mascot: string; city: string; state: string}) {
+
+// Functions
+
+// Team Card Function
+function Team({school, name, city, state}: {school: string; name: string; city: string; state: string}) {
     
   return(
     <>
-      <h2>School: {school}</h2>
-      <h3>Mascot: {mascot}</h3>
-      <h3>Location: {city}, {state}</h3>
+      {/* Space for aesthetic */}
+      <h3>-------------</h3> 
+
+      {/* School and mascot name */}
+      <h3>{school}: {name}</h3>
+      
+      {/* Location */}
+      <h4>{city}, {state}</h4>
     </>
   )
 }
 
+
+// Returns a list of team cards
 function TeamList() {
   return (
     <>
+      {/* Heading */}
+      <h2>NCAA Basketball Teams</h2>
+
+      {/* Display of all team cards */}
       {
-        teamsData.map((singleTeam) => (
+        jsonData.teams.map((singleTeam) => (
           <Team {...singleTeam}/>
         ))
       }
+    </>
+  );
+}
+
+// This is the Introduction heading
+function Intro() {
+  return(
+    <>
+      {/* Title */}
+      <h1>Welcome to Mission #9!</h1>
+      
+      {/* Introduction to the website */}
+      <h3>
+        With March Madness upon us, here is a list of all the colleges in NCAA Basketball for your reference!
+      </h3>
     </>
   );
 }
@@ -43,11 +60,10 @@ function App() {
 
   return (
     <>
-      <h1>Mission #9</h1>
-      <h2>What are we about?</h2>
-      <p>Text "introducing the user to what the site is"</p>
+      {/* Include the intro text */}
+      <Intro />
 
-      <h2>Team Card</h2>
+      {/* Include the team list */}
       <TeamList />
     </>
   )
